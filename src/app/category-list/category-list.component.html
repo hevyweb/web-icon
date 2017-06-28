@@ -1,0 +1,15 @@
+<div class="searchCategory">
+    <input type="text" id="searchCategory" placeholder="Filter Category" role="search" ng-model="filterCategory">
+</div>
+<ul>
+    <li routerLinkActive="current" [routerLinkActiveOptions]="{exact: true}">
+        <a [routerLink]="['/']">
+            Show all
+        </a>
+    </li>
+    <li *ngFor="let category of categories; let i = index;" routerLinkActive="current">
+        <a [routerLink]="['/']" [queryParams]="{categoryId: i}">
+            {{category.name}}
+        </a>
+    </li>
+</ul>

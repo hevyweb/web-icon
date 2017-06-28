@@ -1,0 +1,138 @@
+.categories {
+    background: #eeeeee none repeat scroll 0 0;
+    height: 100%;
+    padding: 20px;
+    width: 100%;
+}
+
+.category {
+    border: 1px solid #ccc;
+}
+
+.categoryHeader{
+    border-bottom: 1px solid #ccc;
+    height: 35px;
+}
+
+.categoryHeader:before{
+    border-right: 1px solid #ccc;
+    content: "?";
+    display: inline-block;
+    font-weight: bold;
+    height: 25px;
+    padding-top: 9px;
+    text-align: center;
+    vertical-align: top;
+    width: 34px;
+}
+
+.categoryBody {
+    background: #fff;
+    padding: 15px;
+}
+
+.categoryBody:after{
+    display: block;
+    content: ' ';
+    clear: both;
+}
+
+#loadNew {
+    background: #28b779 none repeat scroll 0 0;
+    border: 0 none;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 18px;
+    line-height: 42px;
+    margin: 0 auto;
+    padding: 0 15px;
+    text-align: center;
+}
+
+.icon{
+    font-size: 76px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    vertical-align: middle;
+    width: 100px;
+    color: #fff;
+    position: relative;
+    background: 
+        repeating-linear-gradient(to right, transparent, transparent 10px, #ccc 11px),
+        repeating-linear-gradient(to bottom, #2E363F, #2E363F 10px, #ccc 11px);
+    float: left;
+    margin: 10px;
+    cursor: pointer;
+    transition: box-shadow .4s;
+}
+
+.icon:hover{
+    box-shadow: 0 0 10px 2px #2e363f;
+}
+
+button.delete{
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 0 none;
+    color: #d93240;
+    cursor: pointer;
+    height: 34px;
+    left: 1px;
+    padding: 0;
+    position: absolute;
+    top: 0;
+}
+
+#categoryIcons:after {
+    display: block;
+    content: ' ';
+    clear: both;
+}
+
+.iconContainer{
+    position: relative;
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin: 10px 15px;
+    overflow: hidden;
+}
+
+.ignore{
+    background: #d93240 none repeat scroll 0 0;
+    border: 0 none;
+    bottom: -25px;
+    color: #fff;
+    left: 0;
+    padding: 3px 5px;
+    position: absolute;
+    transition: bottom 1s;
+    cursor: pointer;
+}
+
+.add{
+    background: #28b779 none repeat scroll 0 0;
+    border: 0 none;
+    bottom: -25px;
+    color: #fff;
+    padding: 3px 5px;
+    position: absolute;
+    right: 0;
+    transition: bottom .3s;
+    cursor: pointer;
+}
+
+.iconContainer:hover .add, .iconContainer:hover .ignore{
+    bottom: 0;
+}
+
+.category {
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 1px 0px #ccc;
+}
+
+.emptyCategory{
+    text-align: center;
+    padding: 20px 0;
+}

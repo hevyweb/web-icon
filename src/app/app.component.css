@@ -1,0 +1,38 @@
+.main{
+    height: 100%;
+    display: table;
+}
+
+.asideContainer{
+    width: 256px;
+}
+
+.logo{
+    padding: 10px;
+}
+
+.logo a{
+    text-decoration: none;
+}
+
+.content{
+    width: 100%;
+    vertical-align: top;
+    background: #eee;
+    display: table-cell;
+}
+
+.iconSearch{
+    border-left: 1px solid #000;
+    border-right: 1px solid #2e363f;
+    padding: 10px;
+    background: #1F262D;
+}
+
+#iconSearch {
+    border: 0 none;
+    font-size: 20px;
+    line-height: 44px;
+    padding: 0 15px;
+    width: 100%;
+}

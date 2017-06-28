@@ -1,0 +1,22 @@
+<div class="categories">
+    <div class="uncategorized category">
+        <div class="categoryHeader"><h2>Uncategorized</h2></div>
+        <div class="categoryBody">
+            <div id="categoryIcons">
+                <div *ngFor="let newIcon of newIcons" class="iconContainer">
+                    <div class="icon" [innerHTML]=newIcon></div>
+                    <button class="ignore" (click)="ignore(newIcon)">Ignore</button>
+                    <button class="add" (click)="pickIcon(newIcon)">Add</button>
+                </div>                            
+            </div>
+            <button id="loadNew" (click)="loadIcons()">Load</button>
+        </div>
+    </div>
+    <div class="category" *ngFor="let category of categories; let i = index;">
+        <div class="categoryHeader"><h2>{{category.name}}</h2></div>
+        <div class="categoryBody">
+            <div class="icon" *ngFor="let icon of icons | filterBy:'category':i">{{icon.code}}</div>
+            <!--<div ng-show="!icons[category.id].length" class="emptyCategory">Category is empty</div>-->
+        </div>
+    </div>
+</div>
