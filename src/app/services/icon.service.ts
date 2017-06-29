@@ -1,11 +1,12 @@
 import {Injectable} from '@angular/core';
 import {Icon} from "../models/icon.model";
 
-let icons = [
+const icons = [
     new Icon(
         0,
         0,
-        'A',
+        76,
+        '&#76;',
         'Firefox',
         '47.0',
         'Win7',
@@ -14,7 +15,8 @@ let icons = [
     new Icon(
         1,
         1,
-        'B',
+        77,
+        '&#77;',
         'Firefox',
         '47.0',
         'Win7',
@@ -23,7 +25,8 @@ let icons = [
     new Icon(
         2,
         0,
-        'C',
+        78,
+        '&#78;',
         'Firefox',
         '47.0',
         'Win7',
@@ -32,7 +35,8 @@ let icons = [
     new Icon(
         3,
         2,
-        'D',
+        79,
+        '&#79;',
         'Firefox',
         '47.0',
         'Win7',
@@ -41,7 +45,8 @@ let icons = [
     new Icon(
         4,
         2,
-        'E',
+        80,
+        '&#80;',
         'Firefox',
         '47.0',
         'Win7',
@@ -49,7 +54,7 @@ let icons = [
     )
 ];
         
-let iconListPromise = Promise.resolve(icons);
+const iconListPromise = Promise.resolve(icons);
 
 @Injectable()
 export class IconService {
@@ -84,7 +89,7 @@ export class IconService {
         
     }
     
-    getIconByCode(code: string) {
+    getIconByCode(code: number) {
         for (let icon of icons){
             if (icon.code === code){
                 return icon;

@@ -62,14 +62,6 @@
     background: 
         repeating-linear-gradient(to right, transparent, transparent 10px, #ccc 11px),
         repeating-linear-gradient(to bottom, #2E363F, #2E363F 10px, #ccc 11px);
-    float: left;
-    margin: 10px;
-    cursor: pointer;
-    transition: box-shadow .4s;
-}
-
-.icon:hover{
-    box-shadow: 0 0 10px 2px #2e363f;
 }
 
 button.delete{
@@ -95,8 +87,14 @@ button.delete{
     float: left;
     width: 100px;
     height: 100px;
-    margin: 10px 15px;
     overflow: hidden;
+    margin: 10px;
+    cursor: pointer;
+    transition: box-shadow .4s;
+}
+
+.iconContainer:hover{
+    box-shadow: 0 0 10px 2px #2e363f;
 }
 
 .ignore{

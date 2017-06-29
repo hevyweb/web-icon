@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {CategoryService} from '../services/category.service';
-import {IconService} from '../services/icon.service';
+import {IconService, CategoryService} from '../../services/';
 
-import {Icon} from '../models/icon.model';
-import {Category} from '../models/category.model';
+import {Icon, Category} from '../../models/';
 
 
 @Component({
@@ -15,6 +13,7 @@ export class IconListComponent implements OnInit {
     icons: Icon[];
     categories: Category[];
     newIcons: any[];
+    iconCodes: any[];
     
   constructor(
       private categoryService: CategoryService,
@@ -22,17 +21,25 @@ export class IconListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-      this.iconService.getIcons().then(icons => this.icons = icons)
+      this.iconCodes = [];
+      this.iconService.getIcons().then(
+        (icons) => {
+            this.icons = icons;
+            this.icons.map(icon => this.iconCodes[icon.code] = 1)
+        })
         .catch((err) => console.log(err));
       this.categories = this.categoryService.getCategories();
       this.newIcons = [];
   }
   
   loadIcons() {
-      for (let n = 0; n<100; n++){
-          let code = '&#' + n + ';';
-          if (this.iconService.getIconByCode(code) == false){
+      for (var n = 0, i = 0; n<100; i++){
+          let code = '&#' + i + ';';          
+          
+          if (typeof this.iconCodes[i] === 'undefined'){
               this.newIcons.push(code);
+              this.iconCodes[i] = 1;
+              n++;
           }
       }
   }
