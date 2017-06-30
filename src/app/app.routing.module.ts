@@ -1,15 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import {IconListComponent, PageNotFoundComponent} from './';
+import {PageNotFoundComponent} from './';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: IconListComponent,
-    pathMatch: 'full',
-    data: { title: 'Web icons' }
-  },
   {
     path: '**',
     component: PageNotFoundComponent,
@@ -17,11 +11,11 @@ const routes: Routes = [
   }
 ];
 
-export let appRouterComponents = [IconListComponent, PageNotFoundComponent];
+export let appRouterComponents = [PageNotFoundComponent];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forChild(routes)
   ],
   exports: [
     RouterModule

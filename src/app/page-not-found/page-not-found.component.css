@@ -1,0 +1,16 @@
+.pageNotFound {
+    text-align: center;
+}
+
+.oops{
+    color: #db3041;
+    font-size: 70px;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin: 30px 0 10px;
+}
+
+.description{
+    color: #618ca7;
+    font-size: 26px;
+}

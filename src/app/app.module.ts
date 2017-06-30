@@ -2,25 +2,26 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Router } from '@angular/router';
 
+import {IconModule} from './modules/icon.module';
+
 import { AppRoutingModule, appRouterComponents } from './app.routing.module';
 
 import { AppComponent } from './app.component';
 import { IconService } from './services/icon.service';
 import { CategoryService } from './services/category.service';
 import { CategoryListComponent} from './';
-import { FilterByPipe } from './pipes/filterBy.pipe';
 
 @NgModule({
+  imports: [
+    BrowserModule,    
+    IconModule,
+    AppRoutingModule
+  ],
   declarations: [
     AppComponent,
     CategoryListComponent,
-    appRouterComponents,
-    FilterByPipe
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    appRouterComponents        
+  ],  
   providers: [IconService, CategoryService],
   bootstrap: [AppComponent]
 })
