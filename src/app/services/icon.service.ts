@@ -5,6 +5,7 @@ const icons = [
     new Icon(
         0,
         0,
+        '',
         76,
         '&#76;',
         'Firefox',
@@ -15,6 +16,7 @@ const icons = [
     new Icon(
         1,
         1,
+        '',
         77,
         '&#77;',
         'Firefox',
@@ -25,6 +27,7 @@ const icons = [
     new Icon(
         2,
         0,
+        '',
         78,
         '&#78;',
         'Firefox',
@@ -35,6 +38,7 @@ const icons = [
     new Icon(
         3,
         2,
+        '',
         79,
         '&#79;',
         'Firefox',
@@ -45,6 +49,7 @@ const icons = [
     new Icon(
         4,
         2,
+        '',
         80,
         '&#80;',
         'Firefox',
@@ -65,7 +70,7 @@ export class IconService {
     getIcon(id: number | string): Promise<Icon> {
         return this.getIcons()
             .then(icons => icons.find(icon => icon.id === +id))
-            .catch(() => Promise.reject('Error in getTask method'));;
+            .catch(() => Promise.reject('Error in getTask method'));
     }
 
     addIcon(icon: Icon): void {
@@ -89,12 +94,12 @@ export class IconService {
         
     }
     
-    getIconByCode(code: number) {
-        for (let icon of icons){
-            if (icon.code === code){
-                return icon;
-            }
-        }
-        return false;
+    getIconByCode(code: string|number): Promise<Icon> {
+        return this.getIcons()
+            .then(icons => 
+                icons.find(icon => icon.code === +code) ||
+                new Icon(null, null, '', +code, '&#' + code + ';', '', '', '', '')
+            )
+            .catch(() => Promise.reject('Error in getTask method'));
     }
 }

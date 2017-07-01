@@ -43,4 +43,8 @@ export class IconListComponent implements OnInit {
           }
       }
   }
+  
+  convertToInteger(icon: string){
+      return icon.replace('&#', '').replace(';', '');
+  }
 }

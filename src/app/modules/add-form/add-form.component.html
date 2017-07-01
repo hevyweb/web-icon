@@ -1,3 +1,40 @@
-<p>
-  add-form works!
-</p>
+<div class="addForm">
+    <div class="formTitle">
+        Add new icon to the library
+    </div>
+    <div class="formBody">
+        <div class="iconList">
+            <div class="iconContainer">
+                <div class="fontArial icon" [innerHTML]="icon.html"></div>
+                <div class="fontTitle">Arial</div>
+            </div>
+            <div class="iconContainer">
+                <div class="fontVerdana icon" [innerHTML]="icon.html"></div>
+                <div class="fontTitle">Verdana</div>
+            </div>
+            <div class="iconContainer">
+                <div class="fontTahoma icon" [innerHTML]="icon.html"></div>
+                <div class="fontTitle">Tahoma</div>
+            </div>
+            <div class="iconContainer">
+                <div class="fontTimesNewRoman icon" [innerHTML]="icon.html"></div>
+                <div class="fontTitle">Times New Roman</div>
+            </div>
+            <div class="iconContainer">
+                <div class="fontSansSerif icon" [innerHTML]="icon.html"></div>
+                <div class="fontTitle">Sans Serif</div>
+            </div>
+        </div>
+        <div class="formData">
+            <form (ngSubmit)="save()" novalidate [formGroup]="iconForm">
+                <div [ngClass]="{'error': formError.description}" class="formField">
+                    <input type="text" id="description" formControlName="description" placeholder="Description (required)">
+                </div>
+                <div class="buttons">
+                    <button type="submit" class="positive" [disabled]="!iconForm.valid">Save</button>
+                    <a routerLink="/" role="button" class="negative">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
