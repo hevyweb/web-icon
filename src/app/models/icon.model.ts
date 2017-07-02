@@ -7,7 +7,6 @@ export class Icon{
         public code:        number,
         public html:        string,
         public browser:     string,
-        public version:     string,
         public os:          string,
         public created:     string
     ) { }

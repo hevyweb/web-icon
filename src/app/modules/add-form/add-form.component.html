@@ -4,31 +4,27 @@
     </div>
     <div class="formBody">
         <div class="iconList">
-            <div class="iconContainer">
-                <div class="fontArial icon" [innerHTML]="icon.html"></div>
-                <div class="fontTitle">Arial</div>
-            </div>
-            <div class="iconContainer">
-                <div class="fontVerdana icon" [innerHTML]="icon.html"></div>
-                <div class="fontTitle">Verdana</div>
-            </div>
-            <div class="iconContainer">
-                <div class="fontTahoma icon" [innerHTML]="icon.html"></div>
-                <div class="fontTitle">Tahoma</div>
-            </div>
-            <div class="iconContainer">
-                <div class="fontTimesNewRoman icon" [innerHTML]="icon.html"></div>
-                <div class="fontTitle">Times New Roman</div>
-            </div>
-            <div class="iconContainer">
-                <div class="fontSansSerif icon" [innerHTML]="icon.html"></div>
-                <div class="fontTitle">Sans Serif</div>
+            <div *ngFor="let font of fonts" class="iconContainer">
+                <div class="{{font.className}} icon" [innerHTML]="icon.html"></div>
+                <div class="fontTitle">{{font.name}}</div>
             </div>
         </div>
         <div class="formData">
             <form (ngSubmit)="save()" novalidate [formGroup]="iconForm">
-                <div [ngClass]="{'error': formError.description}" class="formField">
+                <div [ngClass]="{'error': formError.description, 'formField': true}">
                     <input type="text" id="description" formControlName="description" placeholder="Description (required)">
+                    <div class="errorHint" *ngIf="iconForm.get('description').errors">
+                        Please fill the description.
+                    </div>
+                </div>
+                <div [ngClass]="{'error': formError.category, 'formField categoryFieldContainer': true}">
+                    <select id="category" formControlName="category">
+                        <option value=null>-- Select category --</option>
+                        <option *ngFor="let category of categories" value={{category.id}}>{{category.name}}</option>
+                    </select>
+                    <div class="errorHint" *ngIf="iconForm.get('category').errors">
+                        Please select the category.
+                    </div>
                 </div>
                 <div class="buttons">
                     <button type="submit" class="positive" [disabled]="!iconForm.valid">Save</button>

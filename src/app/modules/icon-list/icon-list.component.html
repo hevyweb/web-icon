@@ -12,11 +12,12 @@
             <button id="loadNew" (click)="loadIcons()">Load</button>
         </div>
     </div>
-    <div class="category" *ngFor="let category of categories; let i = index;">
+    <div class="category" *ngFor="let category of categories">
         <div class="categoryHeader"><h2>{{category.name}}</h2></div>
         <div class="categoryBody">
-            <div class="iconContainer" *ngFor="let icon of icons | filterBy:'category':i">
-                 <div class="icon" [innerHTML]=icon.html></div>
+            <div class="iconContainer" *ngFor="let icon of icons | filterBy:'category':category.id">
+                 <div class="deleteIcon" (click)="removeIcon(icon.code)">x</div>
+                 <a routerLink="/icon-edit/{{icon.code}}" class="icon" [innerHTML]=icon.html></a>
             </div>
             <!--<div ng-show="!icons[category.id].length" class="emptyCategory">Category is empty</div>-->
         </div>

@@ -24,7 +24,7 @@ export class IconListComponent implements OnInit {
       this.iconCodes = [];
       this.iconService.getIcons().then(
         (icons) => {
-            this.icons = icons;
+            this.icons = icons;console.log(this.icons);
             this.icons.map(icon => this.iconCodes[icon.code] = 1)
         })
         .catch((err) => console.log(err));
@@ -42,6 +42,13 @@ export class IconListComponent implements OnInit {
               n++;
           }
       }
+  }
+  
+  removeIcon(code: number) {
+    this.iconService.remove(code).then(icons => {
+        this.icons = icons.concat([]);
+        this.icons.map(icon => this.iconCodes[icon.code] = 1)
+    });
   }
   
   convertToInteger(icon: string){

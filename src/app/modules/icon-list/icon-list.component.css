@@ -59,6 +59,8 @@
     width: 100px;
     color: #fff;
     position: relative;
+    display: block;
+    text-decoration: none;
     background: 
         repeating-linear-gradient(to right, transparent, transparent 10px, #ccc 11px),
         repeating-linear-gradient(to bottom, #2E363F, #2E363F 10px, #ccc 11px);
@@ -133,4 +135,23 @@ button.delete{
 .emptyCategory{
     text-align: center;
     padding: 20px 0;
+}
+
+.deleteIcon{
+    position: absolute;
+    background: #db3041;
+    width: 15px;
+    height: 15px;
+    top: 3px;
+    right: 3px;
+    z-index: 1;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.iconContainer:hover .deleteIcon{
+    opacity: 1;
 }

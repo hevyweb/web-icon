@@ -12,9 +12,14 @@ const routes: Routes = [
     data: { title: 'Web icons' }
   },
   {
-    path: 'icon-add/:id',
+    path: 'icon-add/:code',
     component: AddFormComponent,
-    data: { title: 'Add new icon to the icon.' }
+    data: { title: 'Add new icon to the library.' }
+  },
+  {
+    path: 'icon-edit/:code',
+    component: AddFormComponent,
+    data: { title: 'Edit icon.' }
   }
 ];
 

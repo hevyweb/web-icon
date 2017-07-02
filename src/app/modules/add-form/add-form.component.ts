@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ActivatedRoute, Params } from '@angular/router';
-import { IconService, CategoryService } from '../../services/';
-import { Icon, Category } from '../../models/';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+import { IconService, CategoryService, FontService } from '../../services/';
+import { Icon, Category, Font } from '../../models/';
 import 'rxjs/add/operator/switchMap';
 @Component({
   selector: 'app-add-form',
@@ -11,44 +11,60 @@ import 'rxjs/add/operator/switchMap';
 })
 export class AddFormComponent implements OnInit {
 
-    iconCode: string;
+    iconCode: number;
     icon: Icon;
     categories: Category[];
     iconForm: FormGroup;
     formError: any[];
+    fonts: Font[];
     
     constructor(
-        private router: ActivatedRoute,
+        private activeRoute: ActivatedRoute,
+        private router: Router,
         private iconService: IconService,
-        private categoryService: CategoryService
+        private categoryService: CategoryService,
+        private fontService: FontService
     ) { }
 
     ngOnInit() {
-        this.icon = new Icon(null, null, '', null, '', '', '', '', '');
+        this.icon = new Icon(null, null, '', null, '', '', '', '');
         
         this.iconForm = new FormGroup({
-            description: new FormControl('', Validators.required)
+            description: new FormControl('', Validators.required),
+            category: new FormControl('', Validators.required)
         });
+        
+        this.fonts = this.fontService.getFonts();
         
         this.formError = [];
 
-        this.router.params
-            .switchMap((params: Params) => this.iconService.getIconByCode(+params['id']))
+        this.activeRoute.params
+            .switchMap((params: Params) => {
+                this.iconCode = +params['code'];
+                return this.iconService.getIconByCode(this.iconCode);
+            })
             .subscribe(
                 icon => {
-                    this.icon = Object.assign({}, icon);
+                    this.icon = icon;
                     this.iconForm.setValue({
-                        description: icon.description
+                        description: icon.description,
+                        category: icon.category
                     });
                 },
-                err => console.log(err)
+                error => alert(error)
             );
 
         this.categories = this.categoryService.getCategories();
     }
     
     save(){
-        console.log('saved');
+        this.icon.category = this.iconForm.get('category').value;
+        this.icon.description = this.iconForm.get('description').value;
+        
+        this.iconService.addIcon(this.icon).then(
+            response => this.router.navigate(['/']),
+            error => alert(error)
+        );
     }
 
     ngOnDesctroy(){

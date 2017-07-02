@@ -72,7 +72,8 @@
 }
 
 .formField {
-    padding: 10px;
+    padding: 25px 10px;
+    position: relative;
 }
 
 #description{
@@ -88,13 +89,20 @@
     border: 0 none;
     color: #fff;
     cursor: pointer;
-    font-size: 17px;
-    margin: 0;
+    font-size: 14px;
+    vertical-align: middle;
+    height: 35px;
+    line-height: 35px;
     padding: 0;
     float: right;
-    margin: 10px;
-    padding: 10px 15px;
+    margin: 25px 10px;
+    padding: 0 15px;
     text-transform: uppercase;
+}
+
+.positive[disabled]{
+    background: #ccc;
+    color: #666;
 }
 
 .negative{
@@ -102,9 +110,59 @@
     color: #fff;
     cursor: pointer;
     float: right;
-    margin: 10px;
-    padding: 10px 15px;
+    margin: 25px 10px;
+    padding: 0 15px;
     text-transform: uppercase;
-    font-size: 17px;
+    font-size: 14px;
+    vertical-align: middle;
+    height: 35px;
+    line-height: 35px;
     text-decoration: none;
+}
+
+#category{
+    border: 1px solid #ccc;
+    height: 35px;
+    width: 300px;
+    color: #666;
+}
+
+.categoryFieldContainer {
+    float: left;
+}
+
+.buttons {
+    float: rigth;
+}
+
+input.ng-invalid, select.ng-invalid{
+    border: 1px solid #db3041;
+    box-shadow: 0 0 3px 2px #db3041;
+}
+
+input, select{
+    outline: 0 none
+}
+
+.errorHint{
+    border: 1px solid #ccc;
+    position: absolute;
+    background: #eee;
+    padding: 10px;
+    color: #db3041;
+    top: -20px;
+    left: 10px;
+    box-shadow: 0px 0px 5px 2px #666;
+}
+
+.errorHint:after{
+    position: absolute;
+    bottom: -10px;
+    content: ' ';
+    border-top: 10px solid #eee;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 0 none;
+    display: block;
+    left: 13%;
 }
