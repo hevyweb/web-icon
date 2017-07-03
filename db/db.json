@@ -1,0 +1,9 @@
+{
+"icons": [
+    {"id": 0, "category": 0, "description": "", "code": 76, "html": "&#76;", "browser": "Firefox 47.0", "os": "Win7", "created": "28.06.2017 11:14:00"},
+    {"id": 1, "category": 1, "description": "", "code": 77, "html": "&#77;", "browser": "Firefox 47.0", "os": "Win7", "created": "28.06.2017 11:14:00"},
+    {"id": 2, "category": 0, "description": "", "code": 78, "html": "&#78;", "browser": "Firefox 47.0", "os": "Win7", "created": "28.06.2017 11:14:00"},
+    {"id": 3, "category": 2, "description": "", "code": 79, "html": "&#79;", "browser": "Firefox 47.0", "os": "Win7", "created": "28.06.2017 11:14:00"},
+    {"id": 4, "category": 2, "description": "", "code": 80, "html": "&#80;", "browser": "Firefox 47.0", "os": "Win7", "created": "28.06.2017 11:14:00"}
+]
+}

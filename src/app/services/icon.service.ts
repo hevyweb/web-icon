@@ -1,62 +1,11 @@
 import {Injectable} from '@angular/core';
 import {Icon} from "../models/icon.model";
 import { Ng2DeviceService } from 'ng2-device-detector';
+    
+const serviceUrl = 'http://localhost:3000/icons';
 
 @Injectable()
 export class IconService {
-    
-    private icons = [
-        new Icon(
-            0,
-            0,
-            '',
-            76,
-            '&#76;',
-            'Firefox 47.0',
-            'Win7',
-            '28.06.2017 11:14:00'
-        ),
-        new Icon(
-            1,
-            1,
-            '',
-            77,
-            '&#77;',
-            'Firefox 47.0',
-            'Win7',
-            '28.06.2017 11:14:00'
-        ),
-        new Icon(
-            2,
-            0,
-            '',
-            78,
-            '&#78;',
-            'Firefox 47.0',
-            'Win7',
-            '28.06.2017 11:14:00'
-        ),
-        new Icon(
-            3,
-            2,
-            '',
-            79,
-            '&#79;',
-            'Firefox 47.0',
-            'Win7',
-            '28.06.2017 11:14:00'
-        ),
-        new Icon(
-            4,
-            2,
-            '',
-            80,
-            '&#80;',
-            'Firefox 47.0',
-            'Win7',
-            '28.06.2017 11:14:00'
-        )
-    ];
     
     constructor(
         private detector: Ng2DeviceService
