@@ -61,10 +61,11 @@ export class AddFormComponent implements OnInit {
         this.icon.category = this.iconForm.get('category').value;
         this.icon.description = this.iconForm.get('description').value;
         
-        this.iconService.addIcon(this.icon).then(
-            response => this.router.navigate(['/']),
-            error => alert(error)
-        );
+        this.iconService[this.icon.id ? 'updateIcon' : 'addIcon'](this.icon)
+            .then(
+                response => this.router.navigate(['/']),
+                error => alert(error)
+            );
     }
 
     ngOnDesctroy(){

@@ -4,9 +4,9 @@
         <div class="categoryBody">
             <div id="categoryIcons">
                 <div *ngFor="let newIcon of newIcons" class="iconContainer">
-                    <div class="icon" [innerHTML]=newIcon></div>
-                    <button class="ignore" (click)="ignore(newIcon)">Ignore</button>
-                    <button class="add" routerLink="/icon-add/{{convertToInteger(newIcon)}}">Add</button>
+                    <div class="icon" [innerHTML]=newIcon.html></div>
+                    <button class="ignore" (click)="ignoreIcon(newIcon)">Ignore</button>
+                    <button class="add" routerLink="/icon-add/{{newIcon.code}}">Add</button>
                 </div>                            
             </div>
             <button id="loadNew" (click)="loadIcons()">Load</button>
@@ -16,7 +16,7 @@
         <div class="categoryHeader"><h2>{{category.name}}</h2></div>
         <div class="categoryBody">
             <div class="iconContainer" *ngFor="let icon of icons | filterBy:'category':category.id">
-                 <div class="deleteIcon" (click)="removeIcon(icon.code)">x</div>
+                 <div class="deleteIcon" (click)="removeIcon(icon)">x</div>
                  <a routerLink="/icon-edit/{{icon.code}}" class="icon" [innerHTML]=icon.html></a>
             </div>
             <!--<div ng-show="!icons[category.id].length" class="emptyCategory">Category is empty</div>-->

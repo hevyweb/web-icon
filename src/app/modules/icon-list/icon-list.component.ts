@@ -12,8 +12,8 @@ export class IconListComponent implements OnInit {
 
     icons: Icon[];
     categories: Category[];
-    newIcons: any[];
-    iconCodes: any[];
+    newIcons: Icon[];
+    iconCodes: number[];
     
   constructor(
       private categoryService: CategoryService,
@@ -24,8 +24,8 @@ export class IconListComponent implements OnInit {
       this.iconCodes = [];
       this.iconService.getIcons().then(
         (icons) => {
-            this.icons = icons;console.log(this.icons);
-            this.icons.map(icon => this.iconCodes[icon.code] = 1)
+            this.icons = icons;
+            this.icons.map(icon => this.iconCodes[icon.code] = 1);
         })
         .catch((err) => console.log(err));
       this.categories = this.categoryService.getCategories();
@@ -34,24 +34,27 @@ export class IconListComponent implements OnInit {
   
   loadIcons() {
       for (var n = 0, i = 0; n<100; i++){
-          let code = '&#' + i + ';';          
+          let icon = new Icon(null, null, '', i, '&#' + i + ';', '', '', '');          
           
           if (typeof this.iconCodes[i] === 'undefined'){
-              this.newIcons.push(code);
+              this.newIcons.push(icon);
               this.iconCodes[i] = 1;
               n++;
           }
       }
   }
   
-  removeIcon(code: number) {
-    this.iconService.remove(code).then(icons => {
-        this.icons = icons.concat([]);
-        this.icons.map(icon => this.iconCodes[icon.code] = 1)
+  removeIcon(icon: Icon) {
+    this.iconService.removeIcon(icon).then(() => {
+        this.icons = this.icons.filter(item => item.code !== icon.code);
     });
   }
   
-  convertToInteger(icon: string){
-      return icon.replace('&#', '').replace(';', '');
+  ignoreIcon(icon: Icon) {
+      this.iconService.ignoreIcon(icon).then(() => {
+        this.icons.push(icon);
+        this.iconCodes[icon.code] = 1;
+        this.newIcons = this.newIcons.filter(item => item.code !== icon.code);        
+    });
   }
 }

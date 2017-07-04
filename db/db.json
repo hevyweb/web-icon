@@ -1,9 +1,744 @@
 {
-"icons": [
-    {"id": 0, "category": 0, "description": "", "code": 76, "html": "&#76;", "browser": "Firefox 47.0", "os": "Win7", "created": "28.06.2017 11:14:00"},
-    {"id": 1, "category": 1, "description": "", "code": 77, "html": "&#77;", "browser": "Firefox 47.0", "os": "Win7", "created": "28.06.2017 11:14:00"},
-    {"id": 2, "category": 0, "description": "", "code": 78, "html": "&#78;", "browser": "Firefox 47.0", "os": "Win7", "created": "28.06.2017 11:14:00"},
-    {"id": 3, "category": 2, "description": "", "code": 79, "html": "&#79;", "browser": "Firefox 47.0", "os": "Win7", "created": "28.06.2017 11:14:00"},
-    {"id": 4, "category": 2, "description": "", "code": 80, "html": "&#80;", "browser": "Firefox 47.0", "os": "Win7", "created": "28.06.2017 11:14:00"}
-]
+  "icons": [
+    {
+      "id": 1,
+      "category": "1",
+      "description": "Double ended arrow vertical",
+      "code": 18,
+      "html": "&#18;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 22:58:53 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 2,
+      "category": "1",
+      "description": "arrow up",
+      "code": 24,
+      "html": "&#24;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 22:59:10 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 3,
+      "category": "1",
+      "description": "arrow right",
+      "code": 26,
+      "html": "&#26;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 22:59:31 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 4,
+      "category": "1",
+      "description": "arrow left",
+      "code": 27,
+      "html": "&#27;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 22:59:46 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 5,
+      "category": "1",
+      "description": "Double ended arrow horizontal",
+      "code": 29,
+      "html": "&#29;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:00:10 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 6,
+      "category": -1,
+      "description": "",
+      "code": 48,
+      "html": "&#48;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:00:32 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 7,
+      "category": -1,
+      "description": "",
+      "code": 49,
+      "html": "&#49;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:00:34 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 8,
+      "category": -1,
+      "description": "",
+      "code": 50,
+      "html": "&#50;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:00:35 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 9,
+      "category": -1,
+      "description": "",
+      "code": 51,
+      "html": "&#51;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:00:36 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 10,
+      "category": -1,
+      "description": "",
+      "code": 52,
+      "html": "&#52;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:00:37 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 11,
+      "category": -1,
+      "description": "",
+      "code": 53,
+      "html": "&#53;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:00:38 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 12,
+      "category": -1,
+      "description": "",
+      "code": 54,
+      "html": "&#54;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:00:39 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 13,
+      "category": "0",
+      "description": "dollar sign",
+      "code": 36,
+      "html": "&#36;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:00:52 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 14,
+      "category": "2",
+      "description": "round circle, dot",
+      "code": 7,
+      "html": "&#7;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:01:22 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 15,
+      "category": -1,
+      "description": "",
+      "code": 97,
+      "html": "&#97;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:01:32 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 16,
+      "category": -1,
+      "description": "",
+      "code": 98,
+      "html": "&#98;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:01:33 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 17,
+      "category": -1,
+      "description": "",
+      "code": 99,
+      "html": "&#99;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:01:34 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 18,
+      "category": -1,
+      "description": "",
+      "code": 100,
+      "html": "&#100;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:01:35 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 19,
+      "category": -1,
+      "description": "",
+      "code": 101,
+      "html": "&#101;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:01:36 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 20,
+      "category": -1,
+      "description": "",
+      "code": 102,
+      "html": "&#102;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:01:37 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 21,
+      "category": -1,
+      "description": "",
+      "code": 103,
+      "html": "&#103;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:01:37 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 22,
+      "category": -1,
+      "description": "",
+      "code": 104,
+      "html": "&#104;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:01:38 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 23,
+      "category": -1,
+      "description": "",
+      "code": 105,
+      "html": "&#105;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:01:40 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 24,
+      "category": -1,
+      "description": "",
+      "code": 106,
+      "html": "&#106;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:01:42 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 25,
+      "category": -1,
+      "description": "",
+      "code": 107,
+      "html": "&#107;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:01:43 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 26,
+      "category": -1,
+      "description": "",
+      "code": 108,
+      "html": "&#108;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:01:44 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 27,
+      "category": -1,
+      "description": "",
+      "code": 109,
+      "html": "&#109;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:01:46 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 28,
+      "category": -1,
+      "description": "",
+      "code": 110,
+      "html": "&#110;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:01:47 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 29,
+      "category": -1,
+      "description": "",
+      "code": 111,
+      "html": "&#111;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:01:48 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 30,
+      "category": -1,
+      "description": "",
+      "code": 112,
+      "html": "&#112;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:01:49 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 31,
+      "category": -1,
+      "description": "",
+      "code": 113,
+      "html": "&#113;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:01:50 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 32,
+      "category": "0",
+      "description": "Euro money currency",
+      "code": 128,
+      "html": "&#128;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:02:53 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 33,
+      "category": -1,
+      "description": "",
+      "code": 65,
+      "html": "&#65;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:10 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 34,
+      "category": -1,
+      "description": "",
+      "code": 66,
+      "html": "&#66;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:11 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 35,
+      "category": -1,
+      "description": "",
+      "code": 67,
+      "html": "&#67;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:12 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 36,
+      "category": -1,
+      "description": "",
+      "code": 55,
+      "html": "&#55;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:14 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 37,
+      "category": -1,
+      "description": "",
+      "code": 56,
+      "html": "&#56;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:15 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 38,
+      "category": -1,
+      "description": "",
+      "code": 57,
+      "html": "&#57;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:16 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 39,
+      "category": -1,
+      "description": "",
+      "code": 68,
+      "html": "&#68;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:18 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 40,
+      "category": -1,
+      "description": "",
+      "code": 69,
+      "html": "&#69;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:19 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 41,
+      "category": -1,
+      "description": "",
+      "code": 70,
+      "html": "&#70;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:20 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 42,
+      "category": -1,
+      "description": "",
+      "code": 71,
+      "html": "&#71;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:21 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 43,
+      "category": -1,
+      "description": "",
+      "code": 72,
+      "html": "&#72;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:22 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 44,
+      "category": -1,
+      "description": "",
+      "code": 73,
+      "html": "&#73;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:24 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 45,
+      "category": -1,
+      "description": "",
+      "code": 74,
+      "html": "&#74;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:25 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 46,
+      "category": -1,
+      "description": "",
+      "code": 75,
+      "html": "&#75;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:26 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 47,
+      "category": -1,
+      "description": "",
+      "code": 76,
+      "html": "&#76;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:27 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 48,
+      "category": -1,
+      "description": "",
+      "code": 77,
+      "html": "&#77;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:28 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 49,
+      "category": -1,
+      "description": "",
+      "code": 78,
+      "html": "&#78;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:29 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 50,
+      "category": -1,
+      "description": "",
+      "code": 79,
+      "html": "&#79;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:30 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 51,
+      "category": -1,
+      "description": "",
+      "code": 80,
+      "html": "&#80;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:31 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 52,
+      "category": -1,
+      "description": "",
+      "code": 81,
+      "html": "&#81;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:32 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 53,
+      "category": -1,
+      "description": "",
+      "code": 82,
+      "html": "&#82;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:33 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 54,
+      "category": -1,
+      "description": "",
+      "code": 83,
+      "html": "&#83;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:34 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 55,
+      "category": -1,
+      "description": "",
+      "code": 84,
+      "html": "&#84;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:34 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 56,
+      "category": -1,
+      "description": "",
+      "code": 85,
+      "html": "&#85;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:36 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 57,
+      "category": -1,
+      "description": "",
+      "code": 86,
+      "html": "&#86;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:36 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 58,
+      "category": -1,
+      "description": "",
+      "code": 87,
+      "html": "&#87;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:37 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 59,
+      "category": -1,
+      "description": "",
+      "code": 88,
+      "html": "&#88;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:39 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 60,
+      "category": -1,
+      "description": "",
+      "code": 89,
+      "html": "&#89;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:41 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 61,
+      "category": -1,
+      "description": "",
+      "code": 90,
+      "html": "&#90;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:42 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 62,
+      "category": -1,
+      "description": "",
+      "code": 114,
+      "html": "&#114;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:46 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 63,
+      "category": -1,
+      "description": "",
+      "code": 115,
+      "html": "&#115;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:47 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 64,
+      "category": -1,
+      "description": "",
+      "code": 116,
+      "html": "&#116;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:48 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 65,
+      "category": -1,
+      "description": "",
+      "code": 117,
+      "html": "&#117;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:48 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 66,
+      "category": -1,
+      "description": "",
+      "code": 118,
+      "html": "&#118;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:49 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 67,
+      "category": -1,
+      "description": "",
+      "code": 119,
+      "html": "&#119;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:50 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 68,
+      "category": -1,
+      "description": "",
+      "code": 120,
+      "html": "&#120;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:51 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 69,
+      "category": -1,
+      "description": "",
+      "code": 121,
+      "html": "&#121;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:52 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 70,
+      "category": -1,
+      "description": "",
+      "code": 122,
+      "html": "&#122;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:03:53 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 71,
+      "category": "0",
+      "description": "cent american dollar",
+      "code": 162,
+      "html": "&#162;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:04:26 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 72,
+      "category": "0",
+      "description": "Pound sterling, Great Britain, money",
+      "code": 163,
+      "html": "&#163;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:05:59 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 73,
+      "category": "0",
+      "description": "Yen Japan moeny",
+      "code": 165,
+      "html": "&#165;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:07:14 GMT+0300 (FLE Daylight Time)"
+    },
+    {
+      "id": 74,
+      "category": "1",
+      "description": "arrow left small in the bottom",
+      "code": 767,
+      "html": "&#767;",
+      "browser": "chrome 59.0.3071.115",
+      "os": "windows",
+      "created": "Tue Jul 04 2017 23:08:32 GMT+0300 (FLE Daylight Time)"
+    }
+  ]
 }

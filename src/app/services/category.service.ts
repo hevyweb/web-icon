@@ -7,15 +7,15 @@ export class CategoryService {
         return [
             new Category(
                 0,
-                'Carrot'
+                'Money'
             ),
             new Category(
                 1,
-                'tomato'
+                'Arrows'
             ),
             new Category(
                 2,
-                'potato'
+                'Circle'
             )
         ];
     }
