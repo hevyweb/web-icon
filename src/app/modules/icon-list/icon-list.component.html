@@ -15,7 +15,7 @@
     <div class="category" *ngFor="let category of categories">
         <div class="categoryHeader"><h2>{{category.name}}</h2></div>
         <div class="categoryBody">
-            <div class="iconContainer" *ngFor="let icon of icons | filterBy:'category':category.id">
+            <div class="iconContainer" *ngFor="let icon of icons | filterBy:'category':category.id |like:'description':iconSearch">
                  <div class="deleteIcon" (click)="removeIcon(icon)">x</div>
                  <a routerLink="/icon-edit/{{icon.code}}" class="icon" [innerHTML]=icon.html></a>
             </div>

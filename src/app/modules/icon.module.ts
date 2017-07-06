@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { Ng2DeviceDetectorModule, Ng2DeviceService } from 'ng2-device-detector';
 
 import { FilterByPipe } from '../pipes/filterBy.pipe';
-
+import { LikePipe } from '../pipes/like.pipe';
 
 import { IconListComponent} from './';
 import { IconService, CategoryService, FontService } from '../services/';
@@ -21,7 +21,8 @@ import { IconRoutingModule } from './icon.routing.module';
   declarations: [
       IconListComponent,
       AddFormComponent,
-      FilterByPipe
+      FilterByPipe,
+      LikePipe
   ],
   providers: [
       IconService,

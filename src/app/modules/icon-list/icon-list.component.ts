@@ -14,13 +14,14 @@ export class IconListComponent implements OnInit {
     categories: Category[];
     newIcons: Icon[];
     iconCodes: number[];
+    iconSearch: string[];
     
   constructor(
       private categoryService: CategoryService,
       private iconService: IconService
   ) { }
 
-  ngOnInit() {
+  ngOnInit() {this.iconSearch = [];
       this.iconCodes = [];
       this.iconService.getIcons().then(
         (icons) => {

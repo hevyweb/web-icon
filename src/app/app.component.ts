@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit, OnDestroy } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { Router, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
@@ -12,19 +12,34 @@ export class AppComponent {
   title = 'Web icon';
   
   private sub: Subscription;
+  public iconSearch: string;
+  @Output() search: EventEmitter<any> = new EventEmitter();
   
   constructor(
     private titleService: Title,
     private metaService: Meta,
-    private router: Router
+    private router: Router,
   ){}
   
   onInit(){
+      this.iconSearch = '';
       //this.setPageTitlesAndMeta();
   }
   
+  filterIcons(){
+      this.search.emit(this.getSearchWords());
+  }
+  
+  getSearchWords(){
+      return this.iconSearch.trim()
+        .replace(/\W+/g, " ")
+        .split(" ")
+        .map(word => word.trim())
+        .filter(word => word.length);
+  }
+  
   ngOnDestroy() {
-    this.sub.unsubscribe();
+    
   }
 
   /*private setPageTitlesAndMeta() {

@@ -13,7 +13,7 @@
     </aside>
     <div class="content">
         <div class="iconSearch">
-            <input type="text" id="iconSearch" placeholder="Search Icons..." />
+            <input type="text" id="iconSearch" (keyup)="filterIcons()" [(ngModel)]="iconSearch" name="search" placeholder="Search Icons..." />
         </div>
         <div>
             <router-outlet></router-outlet>

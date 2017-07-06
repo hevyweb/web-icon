@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpModule, JsonpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 import {IconModule} from './modules/icon.module';
 
 import { AppRoutingModule, appRouterComponents } from './app.routing.module';
@@ -17,7 +18,8 @@ import { CategoryListComponent} from './';
     IconModule,
     AppRoutingModule,
     HttpModule,
-    JsonpModule
+    JsonpModule,
+    FormsModule
   ],
   declarations: [
     AppComponent,
