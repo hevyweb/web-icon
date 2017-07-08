@@ -2,7 +2,7 @@
   "icons": [
     {
       "id": 1,
-      "category": "1",
+      "category": 1,
       "description": "Double ended arrow vertical",
       "code": 18,
       "html": "&#18;",
@@ -12,7 +12,7 @@
     },
     {
       "id": 2,
-      "category": "1",
+      "category": 1,
       "description": "arrow up",
       "code": 24,
       "html": "&#24;",
@@ -22,7 +22,7 @@
     },
     {
       "id": 3,
-      "category": "1",
+      "category": 1,
       "description": "arrow right",
       "code": 26,
       "html": "&#26;",
@@ -32,7 +32,7 @@
     },
     {
       "id": 4,
-      "category": "1",
+      "category": 1,
       "description": "arrow left",
       "code": 27,
       "html": "&#27;",
@@ -42,7 +42,7 @@
     },
     {
       "id": 5,
-      "category": "1",
+      "category": 1,
       "description": "Double ended arrow horizontal",
       "code": 29,
       "html": "&#29;",
@@ -122,7 +122,7 @@
     },
     {
       "id": 13,
-      "category": "0",
+      "category": 0,
       "description": "dollar sign",
       "code": 36,
       "html": "&#36;",
@@ -312,7 +312,7 @@
     },
     {
       "id": 32,
-      "category": "0",
+      "category": 0,
       "description": "Euro money currency",
       "code": 128,
       "html": "&#128;",
@@ -702,7 +702,7 @@
     },
     {
       "id": 71,
-      "category": "0",
+      "category": 0,
       "description": "cent american dollar",
       "code": 162,
       "html": "&#162;",
@@ -712,7 +712,7 @@
     },
     {
       "id": 72,
-      "category": "0",
+      "category": 0,
       "description": "Pound sterling, Great Britain, money",
       "code": 163,
       "html": "&#163;",
@@ -722,7 +722,7 @@
     },
     {
       "id": 73,
-      "category": "0",
+      "category": 0,
       "description": "Yen Japan moeny",
       "code": 165,
       "html": "&#165;",
@@ -732,7 +732,7 @@
     },
     {
       "id": 74,
-      "category": "1",
+      "category": 1,
       "description": "arrow left small in the bottom",
       "code": 767,
       "html": "&#767;",

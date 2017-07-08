@@ -1,27 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import {IconService, CategoryService} from '../../services/';
 
 import {Icon, Category} from '../../models/';
-
+import 'rxjs/add/operator/switchMap';
 
 @Component({
   templateUrl: './icon-list.component.html',
   styleUrls: ['./icon-list.component.css']
 })
 export class IconListComponent implements OnInit {
-
+    @Input() search: any;
+    
     icons: Icon[];
     categories: Category[];
     newIcons: Icon[];
     iconCodes: number[];
     iconSearch: string[];
+    activeCategory: number;
     
   constructor(
       private categoryService: CategoryService,
-      private iconService: IconService
+      private iconService: IconService,
+      private activeRoute: ActivatedRoute
   ) { }
 
-  ngOnInit() {this.iconSearch = [];
+  ngOnInit() {
+      this.activeCategory = null;
+      this.activeRoute.params
+        .subscribe((params: Params) => this.activeCategory = params['categoryId']);
+      this.iconSearch = [];
       this.iconCodes = [];
       this.iconService.getIcons().then(
         (icons) => {

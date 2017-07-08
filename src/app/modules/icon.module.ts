@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { Ng2DeviceDetectorModule, Ng2DeviceService } from 'ng2-device-detector';
 
 import { FilterByPipe } from '../pipes/filterBy.pipe';
-import { LikePipe } from '../pipes/like.pipe';
 
 import { IconListComponent} from './';
 import { IconService, CategoryService, FontService } from '../services/';
@@ -21,8 +21,7 @@ import { IconRoutingModule } from './icon.routing.module';
   declarations: [
       IconListComponent,
       AddFormComponent,
-      FilterByPipe,
-      LikePipe
+      FilterByPipe
   ],
   providers: [
       IconService,
@@ -32,4 +31,6 @@ import { IconRoutingModule } from './icon.routing.module';
       Ng2DeviceService
   ]
 })
-export class IconModule { }
+export class IconModule {
+    constructor(router: Router){}
+  }

@@ -11,12 +11,14 @@ import { Category } from '../models/category.model';
 export class CategoryListComponent implements OnInit {
     
   categories: Category[];
+  filterCategory: string;
 
   constructor(
     private categoryService: CategoryService
   ) { }
 
   ngOnInit() {
+      this.filterCategory = '';
       this.categories = this.categoryService.getCategories();
   }
 }

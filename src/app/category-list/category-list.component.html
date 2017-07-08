@@ -1,5 +1,5 @@
 <div class="searchCategory">
-    <input type="text" id="searchCategory" placeholder="Filter Category" role="search" ng-model="filterCategory">
+    <input type="text" id="searchCategory" placeholder="Filter Category" role="search" [(ngModel)]="filterCategory">
 </div>
 <ul>
     <li routerLinkActive="current" [routerLinkActiveOptions]="{exact: true}">
@@ -7,8 +7,8 @@
             Show all
         </a>
     </li>
-    <li *ngFor="let category of categories; let i = index;" routerLinkActive="current">
-        <a [routerLink]="['/']" [queryParams]="{categoryId: i}">
+    <li *ngFor="let category of categories | like:'name':filterCategory" routerLinkActive="current">
+        <a [routerLink]="['/category/'+ category.id]">
             {{category.name}}
         </a>
     </li>

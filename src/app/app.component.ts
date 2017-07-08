@@ -13,7 +13,7 @@ export class AppComponent {
   
   private sub: Subscription;
   public iconSearch: string;
-  @Output() search: EventEmitter<any> = new EventEmitter();
+  @Output() search: EventEmitter<string[]> = new EventEmitter();
   
   constructor(
     private titleService: Title,
@@ -30,7 +30,7 @@ export class AppComponent {
       this.search.emit(this.getSearchWords());
   }
   
-  getSearchWords(){
+  getSearchWords(): string[]{
       return this.iconSearch.trim()
         .replace(/\W+/g, " ")
         .split(" ")

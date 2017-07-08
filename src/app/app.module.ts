@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import {IconModule} from './modules/icon.module';
-
+import { LikePipe } from './pipes/like.pipe';
 import { AppRoutingModule, appRouterComponents } from './app.routing.module';
 
 import { AppComponent } from './app.component';
@@ -24,7 +24,8 @@ import { CategoryListComponent} from './';
   declarations: [
     AppComponent,
     CategoryListComponent,
-    appRouterComponents        
+    appRouterComponents,
+    LikePipe
   ],  
   providers: [IconService, CategoryService],
   bootstrap: [AppComponent]
