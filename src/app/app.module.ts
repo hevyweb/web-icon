@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { IconService } from './services/icon.service';
 import { CategoryService } from './services/category.service';
 import { CategoryListComponent} from './';
+import {IconListComponent} from './modules/icon-list/icon-list.component';
 
 @NgModule({
   imports: [
@@ -26,7 +27,7 @@ import { CategoryListComponent} from './';
     CategoryListComponent,
     appRouterComponents,
     LikePipe
-  ],  
+  ],
   providers: [IconService, CategoryService],
   bootstrap: [AppComponent]
 })

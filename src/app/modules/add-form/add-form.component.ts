@@ -54,7 +54,12 @@ export class AddFormComponent implements OnInit {
                 error => alert(error)
             );
 
-        this.categories = this.categoryService.getCategories();
+        this.categories = [];
+        this.categoryService.getCategories().then(
+        (categories) => {
+            this.categories = categories;
+        })
+        .catch((err) => console.log(err));
     }
     
     save(){

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Directive } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import {IconService, CategoryService} from '../../services/';
 
@@ -18,6 +18,7 @@ export class IconListComponent implements OnInit {
     iconCodes: number[];
     iconSearch: string[];
     activeCategory: number;
+    filteredIcons: Icon[];
     
   constructor(
       private categoryService: CategoryService,
@@ -31,13 +32,22 @@ export class IconListComponent implements OnInit {
         .subscribe((params: Params) => this.activeCategory = params['categoryId']);
       this.iconSearch = [];
       this.iconCodes = [];
+      this.icons = [];
+      
       this.iconService.getIcons().then(
         (icons) => {
             this.icons = icons;
             this.icons.map(icon => this.iconCodes[icon.code] = 1);
         })
         .catch((err) => console.log(err));
-      this.categories = this.categoryService.getCategories();
+      
+      this.categories = [];
+      this.categoryService.getCategories().then(
+        (categories) => {
+            this.categories = categories;
+        })
+        .catch((err) => console.log(err));
+      
       this.newIcons = [];
   }
   
@@ -65,5 +75,10 @@ export class IconListComponent implements OnInit {
         this.iconCodes[icon.code] = 1;
         this.newIcons = this.newIcons.filter(item => item.code !== icon.code);        
     });
+  }
+  
+  filterIcons(icons: Icon[], categoryId){
+      this.filteredIcons = icons.filter(icon => icon.category == categoryId);
+      return this.filteredIcons.length;
   }
 }

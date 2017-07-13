@@ -94,7 +94,7 @@ export class IconService {
     }
     
     handleError(error: any): Promise<any> {
-        alert(error);
+        alert('Please run "json-server db/db.json" to start the server.');
         return Promise.reject(error.message || error);
     }
 }

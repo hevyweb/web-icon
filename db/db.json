@@ -1,4 +1,26 @@
 {
+  "categories": [
+    {
+      "id": 0,
+      "name": "Money"
+    },
+    {
+      "id": 1,
+      "name": "Arrows"
+    },
+    {
+      "id": 2,
+      "name": "Circle"
+    },
+    {
+      "id": 3,
+      "name": "test1"
+    },
+    {
+      "id": 4,
+      "name": "test2"
+    }
+  ],
   "icons": [
     {
       "id": 1,

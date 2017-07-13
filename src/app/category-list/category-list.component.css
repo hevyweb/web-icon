@@ -18,11 +18,18 @@ ul{
 ul {
     border-bottom: 1px solid #37414b;
 }
-ul > li a {
+
+ul li{
     border-bottom: 1px solid #1f262d;
     border-top: 1px solid #37414b;
+    padding: 0 10px;
+    height: 35px;
+    vertical-align: text-bottom;
+}
+
+ul li a {
     line-height: 35px;
-    padding: 0 20px;
+    padding: 0 10px;
     color: #ccc;
     cursor: pointer;
     position: relative;
@@ -30,9 +37,12 @@ ul > li a {
     display: block;
     text-decoration: none;
 }
+
+ul li.active, ul li:hover{
+
+}
+
 ul > li.active a, ul > li:hover a {
-    border-bottom: 1px solid #27a9e3;
-    border-top: 1px solid #27a9e3;
     background-color: #27a9e3;
     color: #fff;
 }
@@ -55,4 +65,38 @@ ul.edit > li:hover {
     background-color: transparent !important;
     border-bottom: 1px solid #1f262d;
     border-top: 1px solid #37414b;
+}
+
+ul li form{
+    padding: 0 10px;
+}
+
+ul li input{
+    width: 100%;
+    padding: 0 10px;
+    background: transparent;
+    border: 0 none;
+    height: 30px;
+    color: #ccc;
+    outline: none;
+    border-bottom: 1px solid #28b779;
+}
+
+ul li input::placeholder{
+    color: #666;
+    font-style: italic;
+}
+#editCategory{
+    background: transparent;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+    text-align: right;
+    float: right;
+    margin: 10px;
+}
+
+#editCategory:after{
+    content: ' >>';
+    color: #28b779;
 }

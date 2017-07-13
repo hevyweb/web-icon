@@ -2,14 +2,21 @@
     <input type="text" id="searchCategory" placeholder="Filter Category" role="search" [(ngModel)]="filterCategory">
 </div>
 <ul>
-    <li routerLinkActive="current" [routerLinkActiveOptions]="{exact: true}">
+    <li routerLinkActive="current" [routerLinkActiveOptions]="{exact: true}" *ngIf="!editCategories">
         <a [routerLink]="['/']">
             Show all
         </a>
     </li>
     <li *ngFor="let category of categories | like:'name':filterCategory" routerLinkActive="current">
-        <a [routerLink]="['/category/'+ category.id]">
+        <a [routerLink]="['/category/'+ category.id]" *ngIf="!editCategories">
             {{category.name}}
         </a>
+        <input type="text" value="{{category.name}}" *ngIf="editCategories">
+    </li>
+    <li *ngIf="!editCategories">
+        <form (ngSubmit)="addNewCategory($event)" >
+            <input type="text" id="addCategory" [(ngModel)]="newCategory" name="newCategory" placeholder="Add new category" />
+        </form>
     </li>
 </ul>
+<button id="editCategory" (click)="enableEdition()">Edit categories</button>

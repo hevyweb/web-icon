@@ -12,6 +12,8 @@ export class CategoryListComponent implements OnInit {
     
   categories: Category[];
   filterCategory: string;
+  newCategory: string;
+  editCategories: boolean;
 
   constructor(
     private categoryService: CategoryService
@@ -19,6 +21,27 @@ export class CategoryListComponent implements OnInit {
 
   ngOnInit() {
       this.filterCategory = '';
-      this.categories = this.categoryService.getCategories();
+      this.categories = [];
+      this.editCategories = false;
+      
+      this.categoryService.getCategories().then(
+        (categories) => {
+            this.categories = categories;
+        })
+        .catch((err) => console.log(err));
+  }
+  
+  addNewCategory($event){
+      let category = new Category(null , this.newCategory);
+      this.categoryService.addCategory(category)
+          .then(category => this.categories = this.categories.concat([category]))
+          .catch((err) => console.log(err));
+          
+      this.newCategory = '';
+  }
+  
+  enableEdition(){
+      this.editCategories = true;
+      console.log(this.editCategories);
   }
 }
