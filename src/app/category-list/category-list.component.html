@@ -2,8 +2,8 @@
     <input type="text" id="searchCategory" placeholder="Filter Category" role="search" [(ngModel)]="filterCategory">
 </div>
 <ul>
-    <li routerLinkActive="current" [routerLinkActiveOptions]="{exact: true}" *ngIf="!editCategories">
-        <a [routerLink]="['/']">
+    <li routerLinkActive="current" [routerLinkActiveOptions]="{exact: true}" [ngClass]="{'disabled':editCategories}" >
+        <a [routerLink]="['/']" (click)="disabled($event)">
             Show all
         </a>
     </li>
@@ -11,7 +11,10 @@
         <a [routerLink]="['/category/'+ category.id]" *ngIf="!editCategories">
             {{category.name}}
         </a>
-        <input type="text" value="{{category.name}}" *ngIf="editCategories">
+        <div *ngIf="editCategories" class="editCategory">
+            <input type="text" value="{{category.name}}" (keyup)="updateCategory(category.id, $event)">
+            <button (click)="deleteCategory(category.id)" class="deleteCategory">x</button>
+        </div>
     </li>
     <li *ngIf="!editCategories">
         <form (ngSubmit)="addNewCategory($event)" >
@@ -19,4 +22,4 @@
         </form>
     </li>
 </ul>
-<button id="editCategory" (click)="enableEdition()">Edit categories</button>
+<button id="editCategory" (click)="toggleEdition()" [innerHTML]="editCategories ? 'Complete Edition' : 'Edit categories'"></button>
