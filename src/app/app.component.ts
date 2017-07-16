@@ -1,25 +1,33 @@
-import { Component, Output, EventEmitter, OnInit, OnDestroy } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, OnInit, OnDestroy } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { Router, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
+import {AppRoutingModule} from './app.routing.module';
+import {SearchCommunicatorService} from './services/search.communicator.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
   title = 'Web icon';
   
   private sub: Subscription;
   public iconSearch: string;
-  @Output() search: EventEmitter<string[]> = new EventEmitter();
+  @ViewChild(AppRoutingModule) list: AppRoutingModule;
   
   constructor(
     private titleService: Title,
     private metaService: Meta,
     private router: Router,
+    private searchService: SearchCommunicatorService
   ){}
+  
+  
+    ngAfterViewInit(): void {
+        console.log(this.list);
+    }
   
   onInit(){
       this.iconSearch = '';
@@ -27,7 +35,7 @@ export class AppComponent {
   }
   
   filterIcons(){
-      this.search.emit(this.getSearchWords());
+      this.searchService.publish(this.getSearchWords());
   }
   
   getSearchWords(): string[]{

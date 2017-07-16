@@ -38,7 +38,10 @@ export class CategoryService {
     }
     
     public deleteCategory(categoryId: number){
-        console.log(categoryId);
+        let url = serviceUrl + '/' + categoryId;
+        return this.http.delete(url)
+            .toPromise()
+            .catch(this.handleError);
     }
     
     handleError(error: any): Promise<any> {

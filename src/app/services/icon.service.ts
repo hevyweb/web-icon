@@ -71,6 +71,16 @@ export class IconService {
             .catch( this.handleError );
     }
     
+    removeIconsByCategory(categoryId: number){
+        let options = new RequestOptions();
+        options.body = JSON.stringify({'category': categoryId});
+        options.headers = new Headers({'Content-Type': 'application/json'}),
+        
+        this.http.delete(serviceUrl, options)
+            .toPromise()
+            .catch( this.handleError );
+    }
+    
     ignoreIcon(icon: Icon): Promise<Icon> {
         icon.category = -1;
         return this.addIcon(icon);

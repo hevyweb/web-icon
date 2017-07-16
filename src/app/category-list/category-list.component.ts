@@ -1,5 +1,5 @@
 import {Component, OnInit } from '@angular/core';
-import { CategoryService } from '../services/category.service';
+import { CategoryService, IconService } from '../services/';
 import { Event } from '@angular/router';
 import { Category } from '../models/category.model';
 
@@ -16,7 +16,8 @@ export class CategoryListComponent implements OnInit {
     editCategories: boolean;
 
     constructor(
-      private categoryService: CategoryService
+      private categoryService: CategoryService,
+      private iconService: IconService
     ) { }
 
     ngOnInit() {
@@ -50,17 +51,45 @@ export class CategoryListComponent implements OnInit {
         }
     }
     
-    updateCategory(categoryId: number, event){
-        let categoryName = event.target.value.trim();
-        let category = new Category(categoryId, categoryName);
-        this.categoryService.updateCategory(category);
-        this.categories = this.categories.map( (category: Category) => {
-            category.name = (category.id == categoryId ? categoryName : category.name);
-            return category;
-        });
+    updateCategory(categoryId: number, event: KeyboardEvent){
+        let input: HTMLInputElement = <HTMLInputElement>event.target;
+        let categoryName = input.value.trim();
+        if (categoryName !=''){
+            input.classList.remove('error');
+            let category = new Category(categoryId, categoryName);
+            this.categoryService.updateCategory(category);
+            this.categories = this.categories.map( (category: Category) => {
+                category.name = (category.id == categoryId ? categoryName : category.name);
+                return category;
+            });
+        } else {
+            input.classList.add('error');
+        }
     }
     
-    deleteCategory(categoryId){
-        this.categoryService.deleteCategory(categoryId);
+    deleteCategory(categoryId: number){
+        let categoryName = this.getCategoryName(categoryId);
+        let message = "Are you sure, that you want to remove category \"" + categoryName + "\"? "+
+            "Icons assigned to that category will be removed.";
+            
+        if (confirm(message)){
+            this.categoryService.deleteCategory(categoryId)
+            .then(response => {
+                this.categories = this.categories.filter((category: Category) =>
+                    category.id != categoryId
+                );
+                this.iconService.removeIconsByCategory(categoryId);
+                return response;
+                }
+            );
+        }
+    }
+    
+    getCategoryName(categoryId: number):string{
+        for (let category of this.categories){
+            if (category.id == categoryId){
+                return category.name;
+            }
+        }
     }
 }
