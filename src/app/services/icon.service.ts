@@ -3,11 +3,15 @@ import {Http, Headers, RequestOptions} from '@angular/http';
 import {Icon} from "../models/icon.model";
 import { Ng2DeviceService } from 'ng2-device-detector';
 import './rxjs-extensions';
+import {Subject} from 'rxjs/Subject';
     
 const serviceUrl = 'http://localhost:3000/icons';
 
 @Injectable()
 export class IconService {
+    
+    private icons = new Subject<Icon[]>();
+    public icons$ = this.icons.asObservable();
     
     constructor(
         private detector: Ng2DeviceService,
@@ -17,7 +21,11 @@ export class IconService {
     public getIcons(): Promise<Icon[]>{
         return this.http.get(serviceUrl)
             .toPromise()
-            .then( response => <Icon[]>response.json())
+            .then( response => {
+                let icons = <Icon[]>response.json();
+                this.icons.next(icons);
+                return icons;
+                })
             .catch(this.handleError);
 
     }
@@ -71,13 +79,21 @@ export class IconService {
             .catch( this.handleError );
     }
     
-    removeIconsByCategory(categoryId: number){
-        let options = new RequestOptions();
-        options.body = JSON.stringify({'category': categoryId});
-        options.headers = new Headers({'Content-Type': 'application/json'}),
-        
-        this.http.delete(serviceUrl, options)
-            .toPromise()
+    removeIconsByCategory(categoryId: number): Promise <Icon[]>{
+        return this.getIcons()
+            .then(
+                icons => {
+                    let filteredIcons = icons.filter(icon => {
+                        if (icon.category == categoryId) {
+                            this.removeIcon(icon);
+                            return false;
+                        };
+                        return true;
+                    });
+                    this.icons.next(filteredIcons);
+                    return filteredIcons;
+                }
+            )
             .catch( this.handleError );
     }
     

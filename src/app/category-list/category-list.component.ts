@@ -78,7 +78,8 @@ export class CategoryListComponent implements OnInit {
                 this.categories = this.categories.filter((category: Category) =>
                     category.id != categoryId
                 );
-                this.iconService.removeIconsByCategory(categoryId);
+                this.iconService.removeIconsByCategory(categoryId)
+                .then();
                 return response;
                 }
             );

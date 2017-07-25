@@ -20,6 +20,7 @@ export class IconListComponent implements OnInit, OnDestroy {
     activeCategory: number;
     filteredIcons: Icon[];
     subscription: Subscription;
+    iconSubscribtion: Subscription;
     
     constructor(
         private categoryService: CategoryService,
@@ -36,12 +37,9 @@ export class IconListComponent implements OnInit, OnDestroy {
         this.iconCodes = [];
         this.icons = [];
 
-        this.iconService.getIcons().then(
-          (icons) => {
-              this.icons = icons;
-              this.icons.map(icon => this.iconCodes[icon.code] = 1);
-          })
-          .catch((err) => console.log(err));
+        this.iconService.getIcons()
+        .then(icons => this.parseIcons(icons))
+        .catch((err) => console.log(err));
 
         this.categories = [];
         this.categoryService.getCategories().then(
@@ -55,10 +53,13 @@ export class IconListComponent implements OnInit, OnDestroy {
         this.subscription = this.searchService.searchPhrases$.subscribe(
           (searchPhrases: string[]) => this.searchPhrases = searchPhrases
         );
+        
+        this.iconSubscribtion = this.iconService.icons$.subscribe(icons => this.parseIcons(icons));
     }
   
     ngOnDestroy(){
         this.subscription.unsubscribe();
+        this.iconSubscribtion.unsubscribe();
     }
   
     loadIcons() {
@@ -100,5 +101,13 @@ export class IconListComponent implements OnInit, OnDestroy {
             }
         }
         return true;
+    }
+    
+    parseIcons(icons: Icon[]){
+        this.icons = icons;
+        this.icons.map(
+            (icon: Icon) => this.iconCodes[icon.code] = 1
+        );
+        return this.icons;
     }
 }

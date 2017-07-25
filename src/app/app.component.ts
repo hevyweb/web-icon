@@ -10,7 +10,7 @@ import {SearchCommunicatorService} from './services/search.communicator.service'
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements OnInit {
   title = 'Web icon';
   
   private sub: Subscription;
@@ -24,12 +24,7 @@ export class AppComponent implements AfterViewInit {
     private searchService: SearchCommunicatorService
   ){}
   
-  
-    ngAfterViewInit(): void {
-        console.log(this.list);
-    }
-  
-  onInit(){
+  ngOnInit(){
       this.iconSearch = '';
       //this.setPageTitlesAndMeta();
   }
@@ -44,10 +39,6 @@ export class AppComponent implements AfterViewInit {
         .split(" ")
         .map(word => word.trim())
         .filter(word => word.length);
-  }
-  
-  ngOnDestroy() {
-    
   }
 
   /*private setPageTitlesAndMeta() {
