@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
   
   private sub: Subscription;
   public iconSearch: string;
+  public collapsedMenu: boolean;
   @ViewChild(AppRoutingModule) list: AppRoutingModule;
   
   constructor(
@@ -26,6 +27,7 @@ export class AppComponent implements OnInit {
   
   ngOnInit(){
       this.iconSearch = '';
+      this.collapsedMenu = true;
       //this.setPageTitlesAndMeta();
   }
   
@@ -39,6 +41,10 @@ export class AppComponent implements OnInit {
         .split(" ")
         .map(word => word.trim())
         .filter(word => word.length);
+  }
+  
+  toggleMenu(){
+      this.collapsedMenu = !this.collapsedMenu;
   }
 
   /*private setPageTitlesAndMeta() {

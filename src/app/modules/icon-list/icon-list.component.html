@@ -12,19 +12,26 @@
             <button id="loadNew" (click)="loadIcons()">Load</button>
         </div>
     </div>
-    <div *ngFor="let category of categories">
-        <div class="category" *ngIf="(activeCategory == null || activeCategory == category.id) && filterIcons(icons, category.id)">
-            <div class="categoryHeader">
-                <span [innerHTML]=filteredIcons[0].html>?</span>
-                <h2>{{category.name}} ( {{filteredIcons.length}} )</h2>
-            </div>
-            <div class="categoryBody">
-                <div class="iconContainer" *ngFor="let icon of filteredIcons">
-                     <div class="deleteIcon" (click)="removeIcon(icon)">x</div>
-                     <a routerLink="/icon-edit/{{icon.code}}" class="icon" [innerHTML]=icon.html></a>
-                </div>
-                <!--<div ng-show="!icons[category.id].length" class="emptyCategory">Category is empty</div>-->
-            </div>
+    <div *ngIf="activeCategory == -1;else allCategories" class="ignoredIcons">
+        <div class="iconContainer" *ngFor="let icon of icons|filterBy:'category':-1">
+            <div class="deleteIcon" (click)="removeIcon(icon)">x</div>
+            <a routerLink="/icon-edit/{{icon.code}}" class="icon" [innerHTML]=icon.html></a>
         </div>
     </div>
+    <ng-template #allCategories>
+        <div *ngFor="let category of categories">
+            <div class="category" *ngIf="(activeCategory == null || activeCategory == category.id) && filterIcons(icons, category.id)">
+                <div class="categoryHeader">
+                    <span [innerHTML]=filteredIcons[0].html>?</span>
+                    <h2>{{category.name}} ( {{filteredIcons.length}} )</h2>
+                </div>
+                <div class="categoryBody">
+                    <div class="iconContainer" *ngFor="let icon of filteredIcons">
+                         <div class="deleteIcon" (click)="removeIcon(icon)">x</div>
+                         <a routerLink="/icon-edit/{{icon.code}}" class="icon" [innerHTML]=icon.html></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
 </div>

@@ -14,10 +14,22 @@ body, html{
 
 aside{
     box-sizing: border-box;
-    display: table-cell;
     background: #2e363f;
     height: 100%;
+    position: absolute;
+    top: 0;
+    left: -256px;
+    display: none;
+    transition: left 1s;
+    z-index: 2;
 }
+
+.collapsed{
+    display: block;
+    left: 0;
+}
+
+
 
 h1{
     padding: 0;
@@ -33,4 +45,19 @@ h2{
     margin: 0;
     display: inline-block;
     padding-left: 15px;
+}
+
+
+
+@media screen and (min-width: 600px){
+    aside{
+        display: table-cell;
+        position: relative;
+        top: auto;
+        left: auto;
+    }
+
+    .xsOnly{
+        display: none !important;
+    }
 }

@@ -1,9 +1,10 @@
 <div class="main">
-    <aside>
+    <aside [ngClass]="{'collapsed': !collapsedMenu}">
         <div class="aside">
             <div class="asideContainer">
                 <div class="logo">
                     <a routerLink="/">
+                        <img src="/assets/images/ic_logo_mdpi.png" alt="{{title}}" >
                         <h1>{{title}}</h1>
                     </a>
                 </div>
@@ -13,8 +14,21 @@
     </aside>
     <div class="content">
         <div class="iconSearch">
+            <a routerLink="/" class="xsOnly">
+                <img src="/assets/images/ic_logo_mdpi.png" alt="{{title}}" >
+            </a>
             <input type="text" id="iconSearch" (keyup)="filterIcons()" [(ngModel)]="iconSearch" name="search" placeholder="Search Icons..." />
+            <div class="burgerMenu xsOnly" role="button" (click)="toggleMenu()">
+                <hr><hr><hr><hr>
+            </div>
         </div>
+            <nav>
+                <ul>
+                    <li><a routerLink="/category/{{null}}">Uncategorized</a></li>
+                    <li><a routerLink="/category/-1">Ignored</a></li>
+                    <li><a routerLink="/about">About</a></li>
+                </ul>
+            </nav>
         <div>
             <router-outlet></router-outlet>
         </div>

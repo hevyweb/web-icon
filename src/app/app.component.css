@@ -15,6 +15,11 @@
     text-decoration: none;
 }
 
+.logo img {
+    float: left;
+    margin-right: 10px;
+}
+
 .content{
     width: 100%;
     vertical-align: top;
@@ -27,6 +32,8 @@
     border-right: 1px solid #2e363f;
     padding: 10px;
     background: #1F262D;
+    display: table;
+    width: 100%;
 }
 
 #iconSearch {
@@ -35,4 +42,70 @@
     line-height: 44px;
     padding: 0 15px;
     width: 100%;
+    display: table-cell;
+    vertical-align: text-bottom;
+}
+
+.burgerMenu{
+    display: table-cell;
+    width: 44px;
+    height: 44px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.burgerMenu hr{
+    border: 2px solid #ccc;
+    margin: 5px 0;
+}
+
+.iconSearch a{
+    display: table-cell;
+    width: 56px;
+}
+
+.iconSearch a img{
+    height: 40px;
+    width: 40px;
+}
+
+nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0 20px;
+    background: #fff;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 2px 2px 1px 0px #ccc;
+    display: block;
+    position: relative;
+    border-top: 1px solid #ccc;
+}
+
+nav ul:after{
+    clear: both;
+    display: block;
+    content: ' ';
+}
+
+nav ul li{
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+nav ul li a{
+    text-decoration: none;
+    margin: 0 5px;
+    display: block;
+    line-height: 40px;
+    font-size: 16px;
+    color: #666;
+}
+
+nav ul li a:after{
+    content: '|';
+    padding-left: 10px;
+    font-weight: bold;
 }

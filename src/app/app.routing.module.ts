@@ -27,9 +27,4 @@ export let appRouterComponents = [PageNotFoundComponent];
     RouterModule
   ]
 })
-export class AppRoutingModule { 
-
-click(){
-    console.log('ok');
-}
-}
+export class AppRoutingModule { }
