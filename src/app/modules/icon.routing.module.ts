@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { IconListComponent, AddFormComponent } from './';
+import { IconListComponent, AddFormComponent, UncategorizedComponent } from './';
 
 
 const routes: Routes = [
@@ -10,6 +10,12 @@ const routes: Routes = [
     component: IconListComponent,
     pathMatch: 'full',
     data: { title: 'Web icons' }
+  },
+  {
+    path: 'uncategorized/:page',
+    component: UncategorizedComponent,
+    pathMatch: 'full',
+    data: { title: 'Uncategorized icons' }  
   },
   {
     path: 'icon-add/:code',

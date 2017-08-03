@@ -1,0 +1,12 @@
+<div id="categoryIcons">
+    <div *ngFor="let newIcon of newIcons" class="iconContainer">
+        <div class="icon" [innerHTML]=newIcon.html></div>
+        <button class="ignore" (click)="ignoreIcon(newIcon)">Ignore</button>
+        <button class="add" routerLink="/icon-add/{{newIcon.code}}">Add</button>
+    </div>
+</div>
+<div class="pagination">
+    <a [routerLink]="['/uncategorized/', (page-1)]" class="previous btn" *ngIf="page>1">Previous</a>
+    <div class="btn currentBtn">{{page}}</div>
+    <a [routerLink]="['/uncategorized/', (page+1)]" class="previous btn">Next</a>
+</div>

@@ -6,9 +6,8 @@ import { Ng2DeviceDetectorModule, Ng2DeviceService } from 'ng2-device-detector';
 
 import { FilterByPipe } from '../pipes/filterBy.pipe';
 
-import { IconListComponent} from './';
+import {IconListComponent, AddFormComponent, UncategorizedComponent} from './';
 import { IconService, CategoryService, FontService } from '../services/';
-import { AddFormComponent } from './add-form/add-form.component';
 import { IconRoutingModule } from './icon.routing.module';
 
 @NgModule({
@@ -20,7 +19,8 @@ import { IconRoutingModule } from './icon.routing.module';
   ],
   declarations: [
       IconListComponent,
-      AddFormComponent,
+      AddFormComponent, 
+      UncategorizedComponent,
       FilterByPipe
   ],
   providers: [
