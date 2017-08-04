@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IconListComponent, AddFormComponent, UncategorizedComponent } from './';
-
+import {StaticPagesComponent} from './static-pages/static-pages.component';
 
 const routes: Routes = [
   {
@@ -14,7 +14,6 @@ const routes: Routes = [
   {
     path: 'uncategorized/:page',
     component: UncategorizedComponent,
-    pathMatch: 'full',
     data: { title: 'Uncategorized icons' }  
   },
   {
@@ -26,6 +25,11 @@ const routes: Routes = [
     path: 'icon-edit/:code',
     component: AddFormComponent,
     data: { title: 'Edit icon.' }
+  },
+  {
+    path: 'about',
+    component: StaticPagesComponent,
+    data: { title: 'About the project' }
   }
 ];
 

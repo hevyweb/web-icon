@@ -1,9 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router, ActivatedRoute, Params } from '@angular/router';
-import {IconService, CategoryService} from '../../services/';
-import {SearchCommunicatorService} from '../../services/search.communicator.service';
+import { ActivatedRoute, Params } from '@angular/router';
+import { IconService } from '../../services/';
 
-import {Icon, Category} from '../../models/';
+import { Icon } from '../../models/';
 import 'rxjs/add/operator/switchMap';
 import {Subscription} from'rxjs/Subscription';
 
@@ -16,9 +15,9 @@ export class UncategorizedComponent implements OnInit, OnDestroy {
     newIcons: Icon[];
     iconCodes: number[];
     activeCategory: number;
-    filteredIcons: Icon[];
-    iconSubscribtion: Subscription;    
+    filteredIcons: Icon[];    
     page: number;
+    subscription: Subscription;
     
     constructor(
         private iconService: IconService,
@@ -31,11 +30,11 @@ export class UncategorizedComponent implements OnInit, OnDestroy {
         this.newIcons = [];
         this.page = 1;
         
-        this.activeRoute.params
+        this.subscription = this.activeRoute.params
         .subscribe((params: Params) => {
             this.page = +params['page'] || 1
             if (this.icons.length){
-                this.loadIcons(this.page);
+                this.loadIcons();
             }
         });
         
@@ -43,19 +42,19 @@ export class UncategorizedComponent implements OnInit, OnDestroy {
         .then(icons => this.parseIcons(icons))
         .catch((err) => console.log(err));
     }
-  
-    ngOnDestroy(){
-        this.iconSubscribtion.unsubscribe();
+    
+    ngOnDestroy() {
+        this.subscription.unsubscribe();
     }
   
-    loadIcons(page: number) {
+    loadIcons() {
         let perPage = 100;
-        for (var n = 0, i = (this.page - 1)*perPage; n<perPage; i++){
+        this.newIcons = [];
+        for (var n = 0, i = ((this.page - 1)*perPage); n<perPage; i++){
             let icon = new Icon(null, null, '', i, '&#' + i + ';', '', '', '');          
 
-            if (typeof this.iconCodes[i] === 'undefined'){
+            if (typeof this.iconCodes[i] === 'undefined'){console.log(i);
                 this.newIcons.push(icon);
-                this.iconCodes[i] = 1;
                 n++;
             }
         }
@@ -74,7 +73,7 @@ export class UncategorizedComponent implements OnInit, OnDestroy {
         this.icons.map(
             (icon: Icon) => this.iconCodes[icon.code] = 1
         );
-        this.loadIcons(this.page);
+        this.loadIcons();
         return this.icons;
     }
 }

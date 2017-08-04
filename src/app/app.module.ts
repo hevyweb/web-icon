@@ -12,6 +12,7 @@ import { IconService } from './services/icon.service';
 import { CategoryService } from './services/category.service';
 import {SearchCommunicatorService} from './services/search.communicator.service';
 import { CategoryListComponent} from './';
+import { StaticPagesComponent } from './modules/static-pages/static-pages.component';
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import { CategoryListComponent} from './';
     AppComponent,
     CategoryListComponent,
     appRouterComponents,
-    LikePipe
+    LikePipe,
+    StaticPagesComponent
   ],
   providers: [IconService, CategoryService, SearchCommunicatorService],
   bootstrap: [AppComponent]
