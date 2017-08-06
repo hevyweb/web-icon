@@ -1,11 +1,28 @@
-<div class="categories">
-    <div *ngIf="activeCategory == -1;else allCategories" class="ignoredIcons">
-        <div class="iconContainer" *ngFor="let icon of icons|filterBy:'category':-1">
-            <div class="deleteIcon" (click)="removeIcon(icon)">x</div>
-            <a routerLink="/icon-edit/{{icon.code}}" class="icon" [innerHTML]=icon.html></a>
-        </div>
+<div *ngIf="activeCategory == -1;else allCategories" class="ignoredIcons">
+    <h1>
+        Ignored icons
+    </h1>
+    <div role="heading" class="subHeading">
+        Icons that have no useful and clear meaning or doesn't exist in the font file.
+    </div>    
+    <div class="categories clr">
+        <ng-container *ngFor="let icon of icons|filterBy:'category':-1; let i = index">
+            <div class="iconContainer" *ngIf="i >= (page-1)*100 && i < page*100">
+                <div class="deleteIcon" (click)="removeIcon(icon)">x</div>
+                <a routerLink="/icon-edit/{{icon.code}}" class="icon" [innerHTML]=icon.html></a>
+            </div>
+        </ng-container>
     </div>
-    <ng-template #allCategories>
+    <nav role="navigation" class="navigation" aria-label="Pagination Navigation">
+        <ul>
+            <li *ngFor="let p of buildPages(icons|filterBy:'category':-1)">
+                <a routerLink="/category/-1/{{p}}" routerLinkActive="active" [ngClass]="{'btn': true, 'currentBtn': page==p}">{{p}}</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<ng-template #allCategories>
+    <div class="categories">
         <div *ngFor="let category of categories">
             <div class="category" *ngIf="(activeCategory == null || activeCategory == category.id) && filterIcons(icons, category.id)">
                 <div class="categoryHeader">
@@ -20,5 +37,5 @@
                 </div>
             </div>
         </div>
-    </ng-template>
-</div>
+    </div>
+</ng-template>

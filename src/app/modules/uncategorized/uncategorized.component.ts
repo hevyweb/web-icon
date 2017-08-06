@@ -48,13 +48,17 @@ export class UncategorizedComponent implements OnInit, OnDestroy {
     }
   
     loadIcons() {
-        let perPage = 100;
+        let perPage = 100,
+            min = (this.page - 1) * perPage,
+            max = this.page * perPage;
         this.newIcons = [];
-        for (var n = 0, i = ((this.page - 1)*perPage); n<perPage; i++){
+        for (var n = 0, i = 0; n<max; i++){
             let icon = new Icon(null, null, '', i, '&#' + i + ';', '', '', '');          
 
-            if (typeof this.iconCodes[i] === 'undefined'){console.log(i);
-                this.newIcons.push(icon);
+            if (typeof this.iconCodes[i] === 'undefined'){
+                if(n >= min && n < max){
+                    this.newIcons.push(icon);
+                }
                 n++;
             }
         }

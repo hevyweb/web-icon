@@ -21,6 +21,7 @@ export class IconListComponent implements OnInit, OnDestroy {
     filteredIcons: Icon[];
     subscription: Subscription;
     iconSubscribtion: Subscription;
+    page: number;
     
     constructor(
         private categoryService: CategoryService,
@@ -32,7 +33,10 @@ export class IconListComponent implements OnInit, OnDestroy {
     ngOnInit() {
         this.activeCategory = null;
         this.activeRoute.params
-          .subscribe((params: Params) => this.activeCategory = params['categoryId']);
+          .subscribe((params: Params) => {
+              this.activeCategory = params['categoryId'];
+              this.page = +params['page'] || 1;
+        });
         this.searchPhrases = [];
         this.iconCodes = [];
         this.icons = [];
@@ -109,5 +113,13 @@ export class IconListComponent implements OnInit, OnDestroy {
             (icon: Icon) => this.iconCodes[icon.code] = 1
         );
         return this.icons;
+    }
+    
+    buildPages(icons: Icon[]): number[]{
+        let pages = [];
+        for (let page = 1; page <= Math.ceil(icons.length/100); page++){
+            pages.push(page);
+        }
+        return pages;
     }
 }

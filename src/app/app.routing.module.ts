@@ -11,6 +11,12 @@ const routes: Routes = [
     data: { title: 'Category' }
   },
   {
+    path: 'category/:categoryId/:page',
+    component: IconListComponent,
+    pathMatch: 'full',
+    data: { title: 'Category' }
+  },
+  {
     path: '**',
     component: PageNotFoundComponent,
     data: { title: 'Page Not Found' }

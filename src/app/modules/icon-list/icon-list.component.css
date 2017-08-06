@@ -1,8 +1,9 @@
 .categories {
     background: #eeeeee none repeat scroll 0 0;
     height: 100%;
-    padding: 20px;
+    padding: 10px 20px 20px;
     width: 100%;
+    display: block;
 }
 
 .category {
@@ -79,7 +80,7 @@ button.delete{
     top: 0;
 }
 
-#categoryIcons:after {
+.categoryIcons:after {
     display: block;
     content: ' ';
     clear: both;
@@ -155,4 +156,16 @@ button.delete{
 
 .iconContainer:hover .deleteIcon{
     opacity: 1;
+}
+
+.navigation ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.navigation ul li{
+    display: inline-block;
+    padding: 0 5px;
 }
