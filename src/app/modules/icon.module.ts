@@ -9,6 +9,7 @@ import { FilterByPipe } from '../pipes/filterBy.pipe';
 import {IconListComponent, AddFormComponent, UncategorizedComponent} from './';
 import { IconService, CategoryService, FontService } from '../services/';
 import { IconRoutingModule } from './icon.routing.module';
+import {An2PaginationComponent} from '../an2-pagination/an2-pagination.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { IconRoutingModule } from './icon.routing.module';
       IconListComponent,
       AddFormComponent, 
       UncategorizedComponent,
-      FilterByPipe
+      FilterByPipe,
+      An2PaginationComponent
   ],
   providers: [
       IconService,

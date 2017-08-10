@@ -1,3 +1,19 @@
-<p>
-  an2-pagination works!
-</p>
+<nav>
+    <ul role="navigation" class="navigation" aria-label="Pagination Navigation">
+        <li *ngIf="currentPage>displayPage">
+            <a routerLink="[route, {page: 1}]">First</a>
+        </li>
+        <li *ngIf="currentPage>displayPage" aria-hidden="true">
+            <span>...</span>
+        </li>
+        <li *ngFor="let page of pages">
+            <a routerLink="[{page: page}]">{{page}}</a>
+        </li>
+        <li *ngIf="maxPage-currentPage>displayPage" aria-hidden="true">
+            <span>...</span>
+        </li>
+        <li *ngIf="maxPage-currentPage>displayPage">
+            <a routerLink="[route, {page: maxPage}]">Last</a>
+        </li>
+    </ul>
+</nav>
