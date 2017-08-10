@@ -13,6 +13,7 @@ import { CategoryService } from './services/category.service';
 import {SearchCommunicatorService} from './services/search.communicator.service';
 import { CategoryListComponent} from './';
 import { StaticPagesComponent } from './modules/static-pages/static-pages.component';
+import { An2PaginationComponent } from './an2-pagination/an2-pagination.component';
 
 @NgModule({
   imports: [
@@ -28,7 +29,8 @@ import { StaticPagesComponent } from './modules/static-pages/static-pages.compon
     CategoryListComponent,
     appRouterComponents,
     LikePipe,
-    StaticPagesComponent
+    StaticPagesComponent,
+    An2PaginationComponent
   ],
   providers: [IconService, CategoryService, SearchCommunicatorService],
   bootstrap: [AppComponent]

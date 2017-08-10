@@ -132,12 +132,17 @@
 }
 
 .buttons {
-    float: rigth;
+    float: right;
 }
 
 input.ng-invalid, select.ng-invalid{
     border: 1px solid #db3041;
     box-shadow: 0 0 3px 2px #db3041;
+}
+
+input.ng-pristine, select.ng-pristine{
+    border: 1px solid;
+    box-shadow: none;
 }
 
 input, select{

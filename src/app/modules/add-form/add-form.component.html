@@ -10,19 +10,19 @@
             </div>
         </div>
         <div class="formData">
-            <form (ngSubmit)="save()" novalidate [formGroup]="iconForm">
-                <div [ngClass]="{'error': formError.description, 'formField': true}">
+            <form (ngSubmit)="save()" novalidate [formGroup]="iconForm" class="clr">
+                <div [ngClass]="{'error': iconForm.get('description').errors && !iconForm.get('description').pristine, 'formField': true}">
                     <input type="text" id="description" formControlName="description" placeholder="Description (required)">
-                    <div class="errorHint" *ngIf="iconForm.get('description').errors">
+                    <div class="errorHint" *ngIf="iconForm.get('description').errors && !iconForm.get('description').pristine">
                         Please fill the description.
                     </div>
                 </div>
-                <div [ngClass]="{'error': formError.category, 'formField categoryFieldContainer': true}">
+                <div [ngClass]="{'error': iconForm.get('category').errors && !iconForm.get('category').pristine, 'formField categoryFieldContainer': true}">
                     <select id="category" formControlName="category">
-                        <option value=null>-- Select category --</option>
+                        <option value="">-- Select category --</option>
                         <option *ngFor="let category of categories" value={{category.id}}>{{category.name}}</option>
                     </select>
-                    <div class="errorHint" *ngIf="iconForm.get('category').errors">
+                    <div class="errorHint" *ngIf="iconForm.get('category').errors && !iconForm.get('category').pristine">
                         Please select the category.
                     </div>
                 </div>
